@@ -231,7 +231,7 @@ function drawChart(actuals) {
   const dpr = window.devicePixelRatio || 1;
 
   const cw = canvas.parentElement.clientWidth || 340;
-  const PAD_L = 52, PAD_R = 16, PAD_T = 24, PAD_B = 44;
+  const PAD_L = 52, PAD_R = 16, PAD_T = 24, PAD_B = 64;
   const W = cw;
   const H = Math.round(W * 0.82);
 
@@ -268,8 +268,8 @@ function drawChart(actuals) {
   ctx.stroke();
 
   /* Y axis labels & ticks */
-  const PIXEL_FONT = "8px 'Press Start 2P', monospace";
-  const JERSEY_FONT = "11px 'Jersey 10', sans-serif";
+  const PIXEL_FONT = "16px 'Jersey 10', monospace";
+  const JERSEY_FONT = "16px 'Jersey 10', sans-serif";
 
   ctx.fillStyle = "#0a0a0a";
   ctx.textAlign = "right";
@@ -336,13 +336,14 @@ function drawChart(actuals) {
   /* X axis title */
   ctx.font = PIXEL_FONT;
   ctx.fillStyle = "#0a0a0a";
-  ctx.textAlign = "left";
-  ctx.fillText("Movies", PAD_L, PAD_T + chartH + 30);
+  ctx.textAlign = "center";
+  ctx.textBaseline = "top";
+  ctx.fillText("Movies", PAD_L + chartW / 2, PAD_T + chartH + 30);
 
   /* Helper */
   const scoreToY = s => PAD_T + chartH - (s / 10) * chartH;
   const SQ = 9;   // square half-size
-  const CR = 7;   // circle radius
+  const CR = 6;   // circle radius
 
   ORDINALS_AXIS.forEach((_, i) => {
     const cx = getX(i);
