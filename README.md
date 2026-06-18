@@ -1,2 +1,3 @@
 # supercrunchers2026.github.io
-bonus assignment for supercrunchers
+Bonus assignment for supercrunchers
+https://moodfun.github.io/supercrunchers2026.github.io/
